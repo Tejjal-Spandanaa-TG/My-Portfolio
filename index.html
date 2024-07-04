@@ -927,18 +927,18 @@ span {
             loop: true
         });
 
-        document.querySelectorAll('.radial-bar').forEach(function(bar, index) {
-    const percentage = parseInt(bar.querySelector('.percentage').textContent, 10);
-    const path = bar.querySelector('.path');
-    const radius = path.r.baseVal.value;
-    const circumference = 2 * Math.PI * radius;
-
-    path.style.strokeDasharray = `${circumference} ${circumference}`;
-    path.style.strokeDashoffset = `${circumference}`;
-
-    const offset = circumference - (percentage / 100) * circumference;
-    path.style.strokeDashoffset = offset;
-});
+        document.addEventListener("DOMContentLoaded", function() {
+                const skills = [
+                    { selector: ".radial-bar:nth-child(1) .path", offset: 75.36 },
+                    { selector: ".radial-bar:nth-child(2) .path", offset: 50.24 },
+                    { selector: ".radial-bar:nth-child(3) .path", offset: 100.48 },
+                    { selector: ".radial-bar:nth-child(4) .path", offset: 100.48 },
+                ];
+            
+                skills.forEach(skill => {
+                    document.querySelector(skill.selector).style.strokeDashoffset = skill.offset;
+                });
+            });
 
     </script>
 </body>
