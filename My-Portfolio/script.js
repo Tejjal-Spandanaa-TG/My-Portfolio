@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     new Typed('#typed-text', {
-        strings: ["Web Developer.", "Python Programmer."],
+        strings: ["Web Developer.", "Designer.", "Content writer.","Youtuber."],
         typeSpeed: 60,
         backSpeed: 40,
         loop: true,
